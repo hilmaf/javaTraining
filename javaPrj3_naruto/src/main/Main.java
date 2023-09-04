@@ -2,8 +2,18 @@ package main;
 
 import battle.BattleManager;
 import battle.NinjaManager;
+import character.Ninja;
 
 public class Main {
+
+	public static Ninja userNaruto;
+	public static Ninja userSasuke;
+	public static Ninja userSakura;
+	public static Ninja enemyNaruto;
+	public static Ninja enemySasuke;
+	public static Ninja enemySakura;
+	public static Ninja userNinja;
+	public static Ninja enemyNinja;
 
 	public static void main(String[] args) {
 		
