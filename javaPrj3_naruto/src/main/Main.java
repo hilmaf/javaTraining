@@ -29,6 +29,10 @@ public class Main {
 		ninjaManager.selectNinja();
 		//배틀
 		battleManager.proceedBattle();
+		
+		System.out.println("=================");
+		System.out.println("|   Exit Game!  |");
+		System.out.println("=================");
 	}
 
 }
