@@ -24,15 +24,15 @@ public class Main {
 		MovieManager movieManager = new MovieManager();
 		movieManager.selectMovie();
 
-		//영화관 선택(영화관, 시간)
+		//영화관 선택
 		TheaterManager theaterManager = new TheaterManager();
 		theaterManager.selectTheaterType;
 		theaterManager.selectTime;
 		
+		//시간 선택
+		
 		//좌석 선택(좌석배치도 확인 가능)
 		//좌석 예매
-		SeatManager seatManager = new SeatManager();
-		seatManager = selectSeat;
 		
 		//계산 및 출력
 

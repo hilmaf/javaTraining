@@ -1,17 +1,11 @@
 package movie;
 
 public abstract class Movie {
-
-	public static Movie elemental;
-	public static Movie smugglers;
-	public static Movie oppenheimer;
-	public static Movie spiderman;
-	
 	
 	public static String Name01 = "엘리멘탈";
 	public static String Name02 = "밀수";
 	public static String Name03 = "오펜하이머";
-	public static String Name04 = "스파이더맨";
+	public static String Name04 = "스파이더맨: 뉴 유니버스";
 	
 	public Movie(String name, String director, String genre, int runTime, String rated, int lateScore) {
 		this.name = name;
