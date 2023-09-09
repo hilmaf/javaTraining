@@ -14,7 +14,7 @@ public class Main {
 	public static Scanner sc = new Scanner(System.in);
 	
 	public static Movie userMovie;
-	public static Movie[] movieArr = new Movie[4];
+	
 	
 	public static void main(String[] args) {
 		
@@ -26,8 +26,7 @@ public class Main {
 
 		//영화관 선택
 		TheaterManager theaterManager = new TheaterManager();
-		theaterManager.selectTheaterType;
-		theaterManager.selectTime;
+		theaterManager.selectTheaterType();
 		
 		//시간 선택
 		

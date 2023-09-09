@@ -10,6 +10,8 @@ import util.MyUtil;
 
 public class MovieManager {
 	
+	public static Movie[] movieArr = new Movie[4];
+	
 	public void selectMovie() {
 //		영화 객체 생성
 		generateMovie();
@@ -23,10 +25,10 @@ public class MovieManager {
 	
 
 	public static void generateMovie() {
-		Main.movieArr[0] = new Elemental(713);
-		Main.movieArr[1] = new Smugglers(508);
-		Main.movieArr[2] = new Oppenheimer(284);
-		Main.movieArr[3] = new Spiderman(72);
+		movieArr[0] = new Elemental(713);
+		movieArr[1] = new Smugglers(508);
+		movieArr[2] = new Oppenheimer(284);
+		movieArr[3] = new Spiderman(72);
 	}
 	
 	public void printMovieInfo() {
@@ -43,18 +45,18 @@ public class MovieManager {
 	public void printUserChoice(int num) {
 		
 		switch(num) {
-		case 1: Main.userMovie = Main.movieArr[0];
-				System.out.println(Main.movieArr[0]);
-				Main.movieArr[0].printBriefInfo(); break;
-		case 2: Main.userMovie = Main.movieArr[1];
-				System.out.println(Main.movieArr[1]);
-				Main.movieArr[1].printBriefInfo(); break;
-		case 3: Main.userMovie = Main.movieArr[2];
-				System.out.println(Main.movieArr[2]);
-				Main.movieArr[2].printBriefInfo(); break;
-		case 4: Main.userMovie = Main.movieArr[3];
-				System.out.println(Main.movieArr[3]);
-				Main.movieArr[3].printBriefInfo(); break;
+		case 1: Main.userMovie = movieArr[0];
+				System.out.println(movieArr[0]);
+				movieArr[0].printBriefInfo(); break;
+		case 2: Main.userMovie = movieArr[1];
+				System.out.println(movieArr[1]);
+				movieArr[1].printBriefInfo(); break;
+		case 3: Main.userMovie = movieArr[2];
+				System.out.println(movieArr[2]);
+				movieArr[2].printBriefInfo(); break;
+		case 4: Main.userMovie = movieArr[3];
+				System.out.println(movieArr[3]);
+				movieArr[3].printBriefInfo(); break;
 		}
 	}
 }
