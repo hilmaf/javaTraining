@@ -12,7 +12,7 @@ public class Spiderman extends Movie{
 	
 	@Override
 	public String toString() {
-		return "스파이더맨: 뉴 유니버스\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
-				+ "\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
+		return "\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
+				+ "분\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
 	}
 }

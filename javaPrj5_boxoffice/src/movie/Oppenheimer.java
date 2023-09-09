@@ -13,7 +13,7 @@ public class Oppenheimer extends Movie {
 
 	@Override
 	public String toString() {
-		return "오펜하이머\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
-				+ "\n등급: " + rated + "\n관객수: " + lateScore + "명";
+		return "\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
+				+ "분\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
 	}
 }

@@ -9,4 +9,10 @@ public class Elemental extends Movie {
 	public void printBriefInfo() {
 		System.out.println("웰컴 투 ‘엘리멘트 시티’!");
 	}
+	
+	@Override
+	public String toString() {
+		return "\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
+				+ "분\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
+	}
 }
