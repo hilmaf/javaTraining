@@ -47,25 +47,25 @@ public class MovieManager {
 	public void printUserChoice(int num) {
 		
 		switch(num) {
-		case 1: System.out.println("\n" + Movie.Name01 + "을 선택하셨습니다.\n");
+		case 1: System.out.println("\n" + Movie.Name01 + "을/를 선택하셨습니다.\n");
 				Main.userMovie = Movie.Name01;
 				System.out.println("====| 영화 정보 |====");
 				System.out.println(movieArr[0]);
 				movieArr[0].printBriefInfo(); 
 				System.out.println("\n"); break;
-		case 2: System.out.println("\n" + Movie.Name02 + "을 선택하셨습니다.\n");
+		case 2: System.out.println("\n" + Movie.Name02 + "을/를 선택하셨습니다.\n");
 				Main.userMovie = Movie.Name02;
 				System.out.println("====| 영화 정보 |====");
 				System.out.println(movieArr[1]);
 				movieArr[1].printBriefInfo(); 
 				System.out.println("\n"); break;
-		case 3: System.out.println("\n" + Movie.Name03 + "을 선택하셨습니다.\n");
+		case 3: System.out.println("\n" + Movie.Name03 + "을/를 선택하셨습니다.\n");
 				Main.userMovie = Movie.Name03;
 				System.out.println("====| 영화 정보 |====");
 				System.out.println(movieArr[2]);
 				movieArr[2].printBriefInfo(); 
 				System.out.println("\n"); break;
-		case 4: System.out.println("\n" + Movie.Name04 + "을 선택하셨습니다.\n");
+		case 4: System.out.println("\n" + Movie.Name04 + "을/를 선택하셨습니다.\n");
 				Main.userMovie = Movie.Name04;
 				System.out.println("====| 영화 정보 |====");
 				System.out.println(movieArr[3]);
