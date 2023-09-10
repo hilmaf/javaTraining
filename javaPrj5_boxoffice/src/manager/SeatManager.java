@@ -1,34 +1,69 @@
 package manager;
 
 import main.Main;
+import seat.Seat;
 import theater.Theater;
 import util.MyUtil;
+	
 
-public class SeatManager {
+	public class SeatManager {
 	
-	String[][] seats = new String[][] {
-		 {"A1", "A2", "A3", "A4"}, 
-		 {"B1", "B2", "B3", "B4"}, 
-		 {"C1", "C2", "C3", "C4"}, 
-		 {"D1", "D2", "D3", "D4"}};
-	
+	public static String[][] seats = new String[][] {
+			 {"A1", "A2", "A3", "A4"}, 
+			 {"B1", "B2", "B3", "B4"}, 
+			 {"C1", "C2", "C3", "C4"}, 
+			 {"D1", "D2", "D3", "D4"}};
+		
+			 
 	public void selectSeats() {
 		
-		int thtnum = convertTheaterToNum();
-		printSeatsInfo(thtnum);
-//		유저 입력받기
-		String seat = MyUtil.scanUserLine();
-//		입력된 좌석에 따라 좌석배치도 변화 주기
-		changeSeatInfo(seat);
+		System.out.println("\n상영관 선택을 완료하셨습니다.\n좌석 예매 창으로 전환됩니다.");
+		System.out.println("\n");
+		
+		while(true) {
+			int thtnum = convertTheaterToNum();
+			printSeatsInfo(thtnum);
+//			유저 입력받기
+			String seat = MyUtil.scanUserLine();
+			setUserSeat(seat);
+//			입력된 좌석에 따라 좌석배치도 변화 주기
+			changeSeatInfo(seat);
+			System.out.println("\n예매를 계속 진행하시겠습니까? (1.yes 2. no)");
+			int num = MyUtil.scanUserInput();
+			if(num == 2) {
+				break;
+			}
+		}
+	}
+	
+	private void setUserSeat(String seat) {
+		switch(seat) {
+		case "A1": Main.userSeat.add("A1"); break;
+		case "A2": Main.userSeat.add("A2"); break;
+		case "A3": Main.userSeat.add("A3"); break;
+		case "A4": Main.userSeat.add("A4"); break;
+		case "B1": Main.userSeat.add("B1"); break;
+		case "B2": Main.userSeat.add("B2"); break;
+		case "B3": Main.userSeat.add("B3"); break;
+		case "B4": Main.userSeat.add("B4"); break;
+		case "C1": Main.userSeat.add("C1"); break;
+		case "C2": Main.userSeat.add("C2"); break;
+		case "C3": Main.userSeat.add("C3"); break;
+		case "C4": Main.userSeat.add("C4"); break;
+		case "D1": Main.userSeat.add("D1"); break;
+		case "D2": Main.userSeat.add("D2"); break;
+		case "D3": Main.userSeat.add("D3"); break;
+		case "D4": Main.userSeat.add("D4"); break;
+		}
 	}
 
 
 	private int convertTheaterToNum() {
-		if(Main.userTheater == TheaterManager.theaterArr[0]) {
+		if(Main.userTheater == Theater.Name01) {
 			return 1;
-		} else if(Main.userTheater == TheaterManager.theaterArr[1]) {
+		} else if(Main.userTheater == Theater.Name02) {
 			return 2;
-		} else if(Main.userTheater == TheaterManager.theaterArr[2]) {
+		} else if(Main.userTheater == Theater.Name03) {
 			return 3;
 		} else {
 			return 4;
@@ -61,7 +96,7 @@ public class SeatManager {
 		case 4: System.out.println(Theater.Name04 + "관 좌석 보기"); break;
 		}
 		System.out.println("");
-		System.out.println("     ======SCREEN======");
+		System.out.println("   ======SCREEN======");
 		System.out.println("");
 		System.out.printf("A   %2s | %2s | %2s | %2s\n", seats[0][0], seats[0][1], seats[0][2], seats[0][3]);
 		System.out.printf("B   %2s | %2s | %2s | %2s\n", seats[1][0], seats[1][1], seats[1][2], seats[1][3]);

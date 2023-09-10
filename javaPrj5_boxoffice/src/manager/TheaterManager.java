@@ -36,36 +36,36 @@ public class TheaterManager {
 	private void setUserTheater(int mvnum, int num) {
 		if(mvnum==1) {
 			if(num == 1) {
-				Main.userTheater = theaterArr[1];
+				Main.userTheater = Theater.Name02;
 			} else if(num == 2) {
-				Main.userTheater = theaterArr[2];
+				Main.userTheater = Theater.Name03;
 			} else {
 				System.out.println("잘못 입력하셨습니다.");
 			}
 		}
 		if(mvnum==2) {
 			if(num==1) {
-				Main.userTheater = theaterArr[0];
+				Main.userTheater = Theater.Name01;
 			} else if(num==2) {
-				Main.userTheater = theaterArr[2];
+				Main.userTheater = Theater.Name03;
 			} else {
 				System.out.println("잘못 입력하셨습니다.");				
 			}
 		}
 		if(mvnum==3) {
 			if(num==1) {
-				Main.userTheater = theaterArr[0];
+				Main.userTheater = Theater.Name01;
 			} else if(num==2) {
-				Main.userTheater = theaterArr[2];				
+				Main.userTheater = Theater.Name03;				
 			} else {
 				System.out.println("잘못 입력하셨습니다.");
 			}
 		}
 		if(mvnum==4) {
 			if(num==1) {
-				Main.userTheater = theaterArr[2];
+				Main.userTheater = Theater.Name03;
 			} else if(num==2) {
-				Main.userTheater = theaterArr[3];				
+				Main.userTheater = Theater.Name04;				
 			} else {
 				System.out.println("잘못 입력하셨습니다.");				
 			}
@@ -104,11 +104,11 @@ public class TheaterManager {
 	}
 
 	private int convertUserMovieToNum() {
-		if(Main.userMovie == MovieManager.movieArr[0]) {
+		if(Main.userMovie == Movie.Name01) {
 			return 1;
-		} else if(Main.userMovie == MovieManager.movieArr[1]) {
+		} else if(Main.userMovie == Movie.Name02) {
 			return 2;
-		} else if(Main.userMovie == MovieManager.movieArr[2]) {
+		} else if(Main.userMovie == Movie.Name03) {
 			return 3;
 		} else {
 			return 4;
