@@ -8,13 +8,14 @@ import movie.Movie;
 import movie.Oppenheimer;
 import movie.Smugglers;
 import movie.Spiderman;
+import theater.Theater;
 
 public class Main {
 	
 	public static Scanner sc = new Scanner(System.in);
 	
 	public static Movie userMovie;
-	
+	public static Theater userTheater;
 	
 	public static void main(String[] args) {
 		

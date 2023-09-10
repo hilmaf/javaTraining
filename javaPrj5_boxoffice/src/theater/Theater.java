@@ -2,17 +2,16 @@ package theater;
 
 public abstract class Theater {
 	
+	public static String Name01 = "Dolby Cinema";
+	public static String Name02 = "IMAX";
+	public static String Name03 = "일반 2D";
+	public static String Name04 = "3D";
+	
 	public Theater(String name, int price) {
 		this.name = name;
 		this.price = price;
 	}
 
-
-	public static Theater Name01;
-	public static Theater Name02;
-	public static Theater Name03;
-	public static Theater Name04;
-	
 	String name;
 	int price;
 
