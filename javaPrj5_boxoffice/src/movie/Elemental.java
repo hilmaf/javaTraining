@@ -2,7 +2,7 @@ package movie;
 
 public class Elemental extends Movie {
 	public Elemental(int lateScore) {
-		super("엘리멘탈", "피터 손", "애니메이션", 109, "전체연령가", lateScore);
+		super("엘리멘탈", "피터 손", "애니메이션", 109, "전체 연령가", lateScore);
 		this.lateScore = lateScore;
 	}
 

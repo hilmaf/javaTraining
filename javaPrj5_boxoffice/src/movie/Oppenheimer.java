@@ -3,7 +3,7 @@ package movie;
 public class Oppenheimer extends Movie {
 	
 	public Oppenheimer(int lateScore) {
-		super("오펜하이머", "크리스토퍼 놀란", "드라마/스릴러", 180, "15세이상", lateScore);
+		super("오펜하이머", "크리스토퍼 놀란", "드라마/스릴러", 180, "15세 이상", lateScore);
 		this.lateScore = lateScore;
 	}
 

@@ -2,7 +2,7 @@ package movie;
 
 public class Smugglers extends Movie {
 	public Smugglers(int lateScore) {
-		super("밀수", "류승완", "범죄", 129, "15세이상", lateScore);
+		super("밀수", "류승완", "범죄", 129, "15세 이상", lateScore);
 		this.lateScore = lateScore;
 	}
 
@@ -13,6 +13,6 @@ public class Smugglers extends Movie {
 	@Override
 	public String toString() {
 		return "\n감독: " + director + "\n장르: " + genre + "\n러닝타임: " + runTime
-				+ "	분\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
+				+ "분\n등급: " + rated + "\n관객수: " + lateScore + "만 명";
 	}
 }
