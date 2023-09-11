@@ -17,13 +17,13 @@ public class Main {
 		System.out.println(menuStack);
 		// 여러 개의 객체 전부다 출력(name필드만)
 		for(int i=0; i<menuStack.size(); i++) {
-			Menu x = (Menu)menuStack.peek();
+			Menu x = (Menu)menuStack.get(i);
 			System.out.println(x.getName());
 		}
 		// 여러 개의 객체 전부다 출력(price필드만)
 		for(int i=0; i<menuStack.size(); i++) {
-			Menu x = (Menu)menuStack.peek();
-			System.out.println(x.getName());
+			Menu x = (Menu)menuStack.get(i);
+			System.out.println(x.getPrice());
 		}
 		
 	}
