@@ -45,11 +45,16 @@ public class MemberManager {
 		String userNick = scanUserInput();
 		
 		// 아이디, 비밀번호, 닉네임 검사하기
-		// 아이디: 중복 불가
 		// 비밀번호: 8~16자 사이 길이=
 		// 닉네임: 2자 이상
-		checkValidation(userId, userPwd, userNick);
 		
+		try {
+			checkValidation(userId, userPwd, userNick);			
+		} catch(Exception e) {
+			System.out.println("예외 발생");
+			return;
+		}
+
 		// 멤버 객체 생성하기
 		Member user = new Member(userId, userPwd, userNick);		
 		
@@ -62,8 +67,19 @@ public class MemberManager {
 		System.out.println(x);
 	}
 	
-	private void checkValidation(String id, String userPwd, String userNick) {
+	private void checkValidation(String id, String pwd, String nick) throws Exception {
+		// 아이디: 중복 불가
+		if(userMap.containsKey(id)) {
+			throw new Exception("중복된 아이디");
+		}
 		
+		if(pwd.length()<8 || pwd.length()>16) {
+			throw new Exception("비밀번호는 8~16자까지 가능");
+		}
+		
+		if(nick.length()<2) {
+			throw new Exception("닉네임은 2자 이상");
+		}
 	}
 	
 	private void login() {
