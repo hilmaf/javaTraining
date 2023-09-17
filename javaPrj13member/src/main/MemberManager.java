@@ -2,6 +2,7 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class MemberManager {
 		String x = File.separator;
 	}
 	// 메뉴
-	public void showMenu() {
+	public void showMenu() throws Exception {
 		System.out.println("=== 메뉴 ===");
 		System.out.println("1. 회원가입");
 		System.out.println("2. 로그인");
@@ -32,7 +33,7 @@ public class MemberManager {
 		case "1": join(); break;
 		case "2": login(); break;
 		case "3": selectAllUser(); break;
-		default: throw new Exception();
+		default: System.out.println("잘못 입력하셨습니다");
 		}
 	}
 	
@@ -50,11 +51,62 @@ public class MemberManager {
 		String userNick = sc.nextLine();
 		
 		// 파일(메모장)에 저장하기
+		pw.println(userId + "#" + userPwd + "#" + userNick);
 		
+		System.out.println("회원가입 완료!");
 	}
 	
 	// 로그인
+	private void login() throws Exception {
+		br = new BufferedReader(new FileReader(f));
+		System.out.println("--- 로그인 ---");
+		
+		System.out.print("아이디: ");
+		String id = sc.nextLine();
+		
+		System.out.print("비밀번호: ");
+		String pwd = sc.nextLine();
+		
+		boolean isOk = false;
+		while(true) {
+			// 파일에서 회원정보 조회
+			String str = br.readLine();
+			if(str == null) {
+				break;
+			}
+			
+			// 회원정보에서 id, pwd만 꺼내기
+			int idx = str.indexOf("#");
+			String memoId = str.substring(0, idx);
+
+			int idx2 = str.indexOf("#");
+			String memoPwd = str.substring(idx+1, idx2);
+			
+			// 일치 여부 확인
+			isOk = id.equals(memoId) && pwd.equals(memoPwd);
+			if(isOk) {
+				break;
+			}
+		}//while end
+		
+		if(isOk) {
+			System.out.println("로그인 성공");		
+		} else {
+			System.out.println("로그인 실패");
+		}
+	}// login ed
 	
 	// 모든 회원 정보 조회
+	private void selectAllUser() throws Exception {
+		br = new BufferedReader(new FileReader(f));
+		// 파일에서 모든 정보 읽기
+		while(true) {
+			String str = br.readLine();
+			if(str == null) {
+				break;
+			}
+			System.out.println(str);
+		}
+	}
 	
 }
