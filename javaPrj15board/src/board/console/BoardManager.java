@@ -13,7 +13,7 @@ import board.Board;
 
 public class BoardManager {
 
-	Map<String, Board> boardList = new HashMap<String, Board>();
+//	Map<String, Board> boardList = new HashMap<String, Board>();
 	
 	// 멤버변수
 	Scanner sc;
@@ -35,7 +35,7 @@ public class BoardManager {
 	// 글쓰기(입력)
 	// 글 불러오기(출력)
 	
-	public void board() {
+	public void board() throws Exception {
 		// 메뉴 보여주기
 		showMenu();
 		// 메뉴 선택
@@ -49,17 +49,18 @@ public class BoardManager {
 		System.out.println("3. 전체 게시판 보기");
 	}
 	
-	private void selectMenu() {
+	private void selectMenu() throws Exception {
 		// 유저 입력 받기
 		String str = sc.nextLine();
 		// 입력값에 따른 실행 경우 분류
 		switch(str) {
 		// 글쓰기(입력)
-		case "1": write();
+		case "1": write(); break;
 		// 글 불러오기(출력)
-		case "2": read();
+		case "2": read(); break;
 		// 모든 게시판 글 조회
-		case "3" : selectAllBoard();
+		case "3" : selectAllBoard(); break;
+		default: System.out.println("잘못 입력했습니다.");
 		}
 	}
 	
@@ -76,8 +77,8 @@ public class BoardManager {
 		String userContent = sc.nextLine();
 		
 		// Board 객체 생성(자바 내 관리 용이)
-		Board post = new Board(userTitle, userContent, userAuthor);
-		boardList.put(post.getAuthor(), post);
+//		Board post = new Board(userTitle, userContent, userAuthor);
+//		boardList.put(post.getAuthor(), post);
 		
 		// 출력스트림 생성
 
@@ -91,10 +92,10 @@ public class BoardManager {
 		System.out.println("글쓴이: ");
 		String author = sc.nextLine();
 		
-		// 게시글 정보 컬렉션에서 조회하기(글제목, 글쓴이)
-		if(boardList.containsKey(author)) {
-			searched = boardList.get(author);
-		}
+//		// 게시글 정보 컬렉션에서 조회하기(글제목, 글쓴이)
+//		if(boardList.containsKey(author)) {
+//			searched = boardList.get(author);
+//		}
 		
 		// 게시글 정보 파일에서 조회하기(글제목, 글쓴이)
 		boolean isSearched = false;

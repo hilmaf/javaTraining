@@ -46,7 +46,7 @@ public class MemberManager {
 		switch(str) {
 		case "1": join(); break;
 		case "2": login(); break;
-		default: throw new Exception();
+		default: throw new Exception(); // 예외 던짐
 		}
 	}
 	
