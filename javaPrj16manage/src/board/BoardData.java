@@ -3,18 +3,18 @@ package board;
 public class BoardData {
 	
 	private String title;
-	private String content;
 	private String author;
+	private String content;
 	
 	// constructor
 	public BoardData() {
 		
 	}
 	
-	public BoardData(String title, String content, String author) {
+	public BoardData(String title, String author, String content) {
 		this.title = title;
-		this.content = content;
 		this.author = author;
+		this.content = content;
 	}
 	
 	// getter/setter
@@ -22,25 +22,14 @@ public class BoardData {
 		return title;
 	}
 	
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	
-	public String getContent() {
-		return content;
-	}
-	
-	public void setContent(String content) {
-		this.content = content;
-	}
-	
 	public String getAuthor() {
 		return author;
 	}
-	
-	public void setAuthor() {
-		this.author = author;
+
+	public String getContent() {
+		return content;
 	}
+
 	
 	// toString
 	@Override
