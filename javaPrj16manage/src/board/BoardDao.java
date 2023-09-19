@@ -20,10 +20,10 @@ public class BoardDao {
 	
 	public boolean post(BoardData boardData) throws Exception {
 		// 스트림 준비(출력)
-		FileWriter fw = new FileWriter(file);
+		FileWriter fw = new FileWriter(file, true);
 		// 저장
 		String dataStr 
-		= boardData.getTitle() + "@" + boardData.getAuthor() + "@" + boardData.getContent();
+		= boardData.getTitle() + "@" + boardData.getAuthor() + "@" + boardData.getContent() + "\n";
 		fw.write(dataStr);
 		fw.close();
 		// 결과 리턴

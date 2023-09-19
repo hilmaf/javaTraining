@@ -25,7 +25,6 @@ public class BoardData {
 	public String getAuthor() {
 		return author;
 	}
-
 	public String getContent() {
 		return content;
 	}

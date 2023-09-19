@@ -10,7 +10,7 @@ public class Main {
 		
 		boardController.post();
 		
-		boardController.search();
+//		boardController.search();
 		
 	}
 
