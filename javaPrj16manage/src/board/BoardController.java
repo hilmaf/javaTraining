@@ -1,5 +1,7 @@
 package board;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class BoardController {
@@ -26,8 +28,23 @@ public class BoardController {
 		
 		// 할일
 		BoardDao dao = new BoardDao();
-		dao.post(boardData);
+		
+		boolean isPosted;
+		try {
+			dao.post(boardData);			
+			isPosted = true;
+		} catch(Exception e) {
+			System.out.println("[게시글 작성] 예외 발생");
+			isPosted = false;
+			System.out.println("회원가입 실패...");
+		}
+		
 		// 결과출력
+		if(isPosted) {
+			System.out.println("회원가입을 완료하였습니다.");
+		} else {
+			System.out.println("회원가입 실패...");
+		}
 		
 	}
 	
@@ -41,8 +58,21 @@ public class BoardController {
 		BoardData boardData = new BoardData();
 		// 할일
 		BoardDao dao = new BoardDao();
-		dao.search(boardData);
+		
+		boolean isSearched;
+		try {
+			dao.search(boardData);
+			isSearched = true;
+		} catch(Exception e) {
+			System.out.println("[게시글 조회] 예외 발생");
+			isSearched = false;
+		}
 		// 결과출력
+		if(isSearched) {
+			
+		} else {
+			System.out.println("게시글 조회 실패");
+		}
 	}
 	
 }
