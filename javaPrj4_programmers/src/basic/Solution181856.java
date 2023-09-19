@@ -10,14 +10,12 @@ public class Solution181856 {
 			answer = 1;
 		} else if(arr1.length < arr2.length) {
 			answer = -1;
-		} else if(arr1.length == arr2.length){
-			answer = 0;
 		} else {
 			
 			int sum1=0;
 			int sum2=0;
 			
-			for(int i : arr1) {
+			for(int i=0; i<arr1.length; i++) {
 				sum1 += arr1[i];
 				sum2 += arr2[i];
 			}
