@@ -13,7 +13,7 @@ public class BoardDao {
 	// 생성자
 	public BoardDao() {
 		String x = File.separator;
-		String fileName = "C:" + x + "Java1" + x + "javaPrj16manage" + x + "boarddata.txt";
+		String fileName = "C:" + x + "Java1" + x + "javaPrj16manage" + x + "data.txt";
 		// 파일 객체 생성
 		file = new File(fileName);
 	}
@@ -30,22 +30,30 @@ public class BoardDao {
 		return true;
 	}
 	
-	public boolean search(BoardData boardData) throws Exception {
+	public void search(BoardData boardData) throws Exception {
 		// 스트림 준비
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
-		// 조회
-		String memoStr = br.readLine();
-				
+		// 조회 및 비교
+		String memoStr = null;
+		while(true) {
+			// 데이터 조회하기
+			memoStr = br.readLine();		
+			if(memoStr == null) {
+				break;
+			}
+			// 조회한 데이터에서 글쓴이만 꺼내기
+			String memoAuthor 
+			= memoStr.substring(memoStr.indexOf("@")+1, memoStr.lastIndexOf("@"));		
+			
+			// 비교
+			boolean isSearched = memoAuthor.equals(boardData.getAuthor());
+			if(isSearched) {
+				System.out.println(memoStr);
+			}
+		}	
 		br.close();
 		fr.close();
-		// 조회한 데이터에서 글쓴이만 꺼내오기
-		String memoAuthor 
-		= memoStr.substring(memoStr.indexOf("@")+1, memoStr.lastIndexOf("@"));
-		// 비교
-		boolean isSearched = memoAuthor == boardData.getAuthor();
-		// 결과 리턴
-		return isSearched;
 	}
 	
 }
