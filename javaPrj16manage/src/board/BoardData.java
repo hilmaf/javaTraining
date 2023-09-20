@@ -7,8 +7,8 @@ public class BoardData {
 	private String content;
 	
 	// constructor
-	public BoardData() {
-		
+	public BoardData(String author) {
+		this.author = author;
 	}
 	
 	public BoardData(String title, String author, String content) {
