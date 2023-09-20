@@ -8,9 +8,9 @@ public class Main {
 		
 		BoardController boardController = new BoardController();
 		
-		boardController.post();
-		
-//		boardController.search();
+		while(true) {
+		boardController.showMenu();
+		}
 		
 	}
 
