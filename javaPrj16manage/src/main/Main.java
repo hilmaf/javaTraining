@@ -9,7 +9,7 @@ public class Main {
 		BoardController boardController = new BoardController();
 		
 		while(true) {
-		boardController.showMenu();
+		boardController.manage();
 		}
 		
 	}

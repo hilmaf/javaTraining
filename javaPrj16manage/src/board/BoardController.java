@@ -14,7 +14,7 @@ public class BoardController {
 	}
 	
 	// 메뉴 보여주기
-	public void showMenu() {
+	public void manage() {
 		System.out.println("--- 메뉴 ---");
 		System.out.println("1. 게시글 작성");
 		System.out.println("2. 게시글 조회(작성자 기준)");
@@ -28,7 +28,7 @@ public class BoardController {
 	}
 	
 	// 글 게시
-	public void post() {
+	private void post() {
 		// 데이터 입력받기
 		System.out.print("제목: ");
 		String title = sc.nextLine();
@@ -60,7 +60,11 @@ public class BoardController {
 		
 	}
 	
-	public void search() {
+	private void checkPostValidation() {
+		
+	}
+	
+	private void search() {
 		// 데이터 입력받기(글쓴이)
 		System.out.print("글쓴이: ");
 		String author = sc.nextLine();
@@ -77,4 +81,7 @@ public class BoardController {
 		
 	}
 	
+	private void checkSearchValidation() {
+		
+	}
 }
