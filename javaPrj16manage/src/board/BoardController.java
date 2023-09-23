@@ -8,6 +8,10 @@ public class BoardController {
 	
 	// 멤버 변수
 	private Scanner sc;
+	String userTitle;
+	String userAuthor;
+	String userContent;
+	String searchAuthor;
 	
 	public BoardController() {
 		sc = new Scanner(System.in);
@@ -31,14 +35,14 @@ public class BoardController {
 	private void post() {
 		// 데이터 입력받기
 		System.out.print("제목: ");
-		String title = sc.nextLine();
+		userTitle = sc.nextLine();
 		System.out.print("글쓴이: ");
-		String author = sc.nextLine();
+		userAuthor = sc.nextLine();
 		System.out.print("내용: ");
-		String content = sc.nextLine();
+		userContent = sc.nextLine();
 		
 		// 데이터 뭉치기
-		BoardData boardData = new BoardData(title, author, content);
+		BoardData boardData = new BoardData(userTitle, userAuthor, userContent);
 		// 할일
 		BoardDao dao = new BoardDao();
 		
@@ -60,16 +64,26 @@ public class BoardController {
 		
 	}
 	
-	private void checkPostValidation() {
+	private void checkPostValidation() throws Exception {
+		if(userTitle == "") {
+			throw new Exception();
+		}
 		
+		if(userAuthor=="") {
+			userAuthor = "익명"; //할일: 몇번째로 입력된 게시글인지 숫자 입력
+		}
+		
+		if(userContent=="") {
+			throw new Exception();
+		}
 	}
 	
 	private void search() {
 		// 데이터 입력받기(글쓴이)
 		System.out.print("글쓴이: ");
-		String author = sc.nextLine();
+		searchAuthor = sc.nextLine();
 		// 데이터 뭉치기
-		BoardData boardData =  new BoardData(author);
+		BoardData boardData =  new BoardData(searchAuthor);
 		// 할일
 		BoardDao dao = new BoardDao();
 		
@@ -81,7 +95,9 @@ public class BoardController {
 		
 	}
 	
-	private void checkSearchValidation() {
-		
+	private void checkSearchValidation() throws Exception {
+		if(searchAuthor=="") {
+			throw new Exception();
+		}
 	}
 }
